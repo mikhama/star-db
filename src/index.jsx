@@ -1,8 +1,14 @@
 const getResource = async (url) => {
   const res = await fetch(url);
+  const { ok, status } = res;
+
+  if (!ok) {
+    throw new Error(`Could not fetch ${url}, received ${status}`);
+  }
   const body = await res.json();
   return body;
 };
 
 getResource('https://swapi.dev/api/people/1/')
-  .then((res) => console.log(res));
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
