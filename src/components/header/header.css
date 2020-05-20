@@ -1,0 +1,28 @@
+.header {
+  margin-bottom: 48px;
+}
+
+.header .navbar-brand {
+  font-size: 36px;
+}
+
+.header .container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.header .nav-item {
+  line-height: 46px;
+}
+
+.header .nav-item .nav-link {
+  padding-bottom: 8px;
+  padding-top: 24px;
+  padding-left: 14px;
+  padding-right: 14px;
+  color: #8b8b8b;
+}
+
+.header .nav-item.active .nav-link{
+  color: #ea1f1f;
+}

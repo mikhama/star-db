@@ -1,0 +1,19 @@
+.random-planet img {
+  width: 100%;
+  height: 100%;
+}
+
+.random-planet-img-container {
+  width: 240px;
+  height: 240px;
+  margin-right: 24px;
+}
+
+.random-planet .card-body {
+  display: flex;
+}
+
+.random-planet .card-title {
+  font-size: 32px;
+  margin-bottom: 36px;
+}
