@@ -6,11 +6,7 @@ class RandomPlanet extends Component {
   swapiService = new SwapiService();
 
   state = {
-    id: null,
-    name: null,
-    population: null,
-    rotationPeriod: null,
-    diameter: null,
+    planet: {},
   };
 
   constructor() {
@@ -18,31 +14,24 @@ class RandomPlanet extends Component {
     this.updatePlanet();
   }
 
+  onPlanetLoaded = (planet) => this.setState({ planet });
+
   async updatePlanet() {
     const id = Math.floor(Math.random() * 25) + 2;
 
-    const {
-      name,
-      population,
-      diameter,
-      rotation_period: rotationPeriod,
-    } = await this.swapiService.getPlanet(id);
-    this.setState({
-      id,
-      name,
-      population,
-      diameter,
-      rotationPeriod,
-    });
+    const planet = await this.swapiService.getPlanet(id);
+    this.onPlanetLoaded(planet);
   }
 
   render = () => {
     const {
-      id,
-      name,
-      population,
-      rotationPeriod,
-      diameter,
+      planet: {
+        id,
+        name,
+        population,
+        rotationPeriod,
+        diameter,
+      },
     } = this.state;
 
     return (
