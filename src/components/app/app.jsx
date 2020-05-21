@@ -12,8 +12,14 @@ const App = () => (
     <Header />
     <main className="container page-layout">
       <RandomPlanet />
-      <ItemList />
-      <PersonDetails />
+      <div className="row">
+        <div className="col-md">
+          <ItemList />
+        </div>
+        <div className="col-md">
+          <PersonDetails />
+        </div>
+      </div>
     </main>
   </div>
 );

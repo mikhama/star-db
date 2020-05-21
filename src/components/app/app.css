@@ -1,20 +1,4 @@
-.page-layout {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.page-layout .random-planet {
-  flex-basis: 100%;
-  margin-bottom: 24px;
-}
-
-.page-layout .item-list {
-  flex-basis: calc(50% - 12px);
-  margin-right: 24px;
-}
-
-.page-layout .person-details,
-.page-layout .planet-details,
-.page-layout .starship-details   {
-  flex-basis: calc(50% - 12px);
+.page-layout .random-planet,
+.page-layout .col-md {
+  margin-bottom: 30px;
 }
