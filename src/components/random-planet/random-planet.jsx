@@ -14,14 +14,9 @@ class RandomPlanet extends Component {
     isError: false,
   };
 
-  constructor() {
-    super();
+  componentDidMount() {
     this.updatePlanet();
     this.interval = setInterval(this.updatePlanet, 2500);
-  }
-
-  componentDidMount() {
-    console.log('did mount');
   }
 
   componentWillUnmount = () => clearInterval(this.interval);
