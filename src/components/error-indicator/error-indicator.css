@@ -1,0 +1,17 @@
+.error-indicator {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.error-indicator p {
+  margin: 0;
+}
+
+.error-indicator .error-heading {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.error-indicator .error-indicator-icon {
+  width: 250px;
+}
