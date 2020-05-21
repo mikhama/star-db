@@ -17,6 +17,7 @@ class RandomPlanet extends Component {
   constructor() {
     super();
     this.updatePlanet();
+    this.interval = setInterval(this.updatePlanet, 2500);
   }
 
   onPlanetLoaded = (planet) => this.setState({
@@ -29,9 +30,9 @@ class RandomPlanet extends Component {
     isLoading: false,
   });
 
-  async updatePlanet() {
+  updatePlanet = async () => {
     try {
-      const id = Math.floor(Math.random() * 25) + 2;
+      const id = Math.floor(Math.random() * 25) + 1;
 
       const planet = await this.swapiService.getPlanet(id);
       this.onPlanetLoaded(planet);
