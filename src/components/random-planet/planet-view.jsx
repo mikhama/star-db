@@ -40,11 +40,11 @@ const PlanetView = ({
 
 PlanetView.propTypes = {
   planet: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    population: PropTypes.number.isRequired,
-    rotationPeriod: PropTypes.number.isRequired,
-    diameter: PropTypes.number.isRequired,
+    population: PropTypes.string.isRequired,
+    rotationPeriod: PropTypes.string.isRequired,
+    diameter: PropTypes.string.isRequired,
   }).isRequired,
 };
 
