@@ -39,6 +39,12 @@ class App extends Component {
               <ItemList
                 onItemSelected={() => {}}
                 getData={this.swapiService.getAllPlanets}
+                renderItem={({ name, diameter }) => (
+                  <span>
+                    {`${name} (${diameter})`}
+                    <button type="button">!</button>
+                  </span>
+                )}
               />
             </div>
             <div className="col-md">
@@ -51,6 +57,7 @@ class App extends Component {
               <ItemList
                 onItemSelected={() => {}}
                 getData={this.swapiService.getAllStarships}
+                renderItem={({ name, model }) => `${name} (${model})`}
               />
             </div>
             <div className="col-md">

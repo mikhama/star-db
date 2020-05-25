@@ -68,11 +68,11 @@ class SwapiService {
     name,
     model,
     manufacturer,
-    costInCredits,
     length,
     crew,
     passengers,
-    cargoCapacity,
+    cost_in_credits: costInCredits,
+    cargo_capacity: cargoCapacity,
   }) => ({
     id: this.extractId(url),
     name,

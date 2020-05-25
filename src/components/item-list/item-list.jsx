@@ -17,18 +17,22 @@ class ItemList extends Component {
   }
 
   renderItems = (items) => {
-    const { onItemSelected } = this.props;
+    const { onItemSelected, renderItem } = this.props;
 
-    return items.map(({ id, name }) => (
-      // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-      <li
-        className="list-group-item"
-        key={id}
-        onClick={() => onItemSelected(id)}
-      >
-        {name}
-      </li>
-    ));
+    return items.map(({ id, ...item }) => {
+      const label = renderItem(item);
+
+      return (
+        // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+        <li
+          className="list-group-item"
+          key={id}
+          onClick={() => onItemSelected(id)}
+        >
+          {label}
+        </li>
+      );
+    });
   }
 
   render = () => {
@@ -49,6 +53,7 @@ class ItemList extends Component {
 }
 
 ItemList.propTypes = {
+  renderItem: PropTypes.func.isRequired,
   getData: PropTypes.func.isRequired,
   onItemSelected: PropTypes.func.isRequired,
 };
