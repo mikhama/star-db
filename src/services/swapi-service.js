@@ -17,8 +17,8 @@ class SwapiService {
     return results.map(this.transformPerson);
   }
 
-  getPerson(id) {
-    const person = this.getResource(`/people/${id}/`);
+  async getPerson(id) {
+    const person = await this.getResource(`/people/${id}/`);
     return this.transformPerson(person);
   }
 
@@ -43,7 +43,7 @@ class SwapiService {
   }
 
   extractId = (url) => {
-    const idRegExp = /\/(\d)*\/$/;
+    const idRegExp = /\/(\d*)\/$/;
     const [, id] = url.match(idRegExp);
 
     return id;
@@ -89,8 +89,8 @@ class SwapiService {
     url,
     name,
     gender,
-    birthYear,
-    eyeColor,
+    birth_year: birthYear,
+    eye_color: eyeColor,
   }) => ({
     id: this.extractId(url),
     name,

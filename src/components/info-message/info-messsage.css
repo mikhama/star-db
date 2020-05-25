@@ -1,0 +1,17 @@
+.info-message {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.info-message p {
+  margin: 0;
+}
+
+.info-message .info-message-heading {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.info-message .info-message-icon {
+  width: 250px;
+}

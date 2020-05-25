@@ -1,30 +1,84 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 
-const PersonDetails = () => (
-  <div className="card text-white bg-primary border-danger person-details">
-    <h4 className="card-header">R2-D2</h4>
-    <div className="card-body">
-      <div className="person-details-img-container">
-        <img src="https://upload.wikimedia.org/wikipedia/en/6/6d/Tatooine_%28fictional_desert_planet%29.jpg" alt="Planet" width="100" />
+import SwapiService from '../../services/swapi-service';
+import Spinner from '../spinner';
+import ErrorIndicator from '../error-indicator';
+import InfoMessage from '../info-message';
+import PersonView from './person-view';
+
+class PersonDetails extends Component {
+  swapiService = new SwapiService();
+
+  state = {
+    person: null,
+    isError: false,
+    isLoading: true,
+  };
+
+  componentDidMount() {
+    this.updatePerson();
+  }
+
+  componentDidUpdate(prevProps) {
+    const { personId } = this.props;
+
+    if (personId !== prevProps.personId) {
+      this.updatePerson();
+    }
+  }
+
+  onPersonLoaded = (person) => this.setState({
+    person,
+    isLoading: false,
+  });
+
+  onError = () => this.setState({
+    isError: true,
+    isLoading: false,
+  });
+
+  updatePerson = async () => {
+    try {
+      const { personId } = this.props;
+
+      if (!personId) {
+        this.onPersonLoaded(null);
+        return;
+      }
+
+      this.setState({ isLoading: true });
+      const person = await this.swapiService.getPerson(personId);
+      this.onPersonLoaded(person);
+    } catch (error) {
+      this.onError();
+    }
+  }
+
+  render = () => {
+    const { person, isLoading, isError } = this.state;
+
+    const isDataEmpty = !(isLoading || isError || person);
+    const hasData = !(isLoading || isError || isDataEmpty);
+
+    const errorMessage = isError ? <ErrorIndicator /> : null;
+    const infoMessage = isDataEmpty ? <InfoMessage /> : null;
+    const spinner = isLoading ? <Spinner /> : null;
+    const content = hasData ? <PersonView person={person} /> : null;
+
+    return (
+      <div className="card text-white bg-primary border-danger person-details">
+        {spinner}
+        {errorMessage}
+        {infoMessage}
+        {content}
       </div>
-      <table className="table">
-        <tbody>
-          <tr>
-            <th scope="row">Gender</th>
-            <td>n/a</td>
-          </tr>
-          <tr>
-            <th scope="row">Birth year</th>
-            <td>33BBY</td>
-          </tr>
-          <tr>
-            <th scope="row">Eye color</th>
-            <td>red</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-);
+    );
+  }
+}
+
+PersonDetails.propTypes = {
+  personId: PropTypes.string.isRequired,
+};
 
 export default PersonDetails;
