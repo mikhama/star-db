@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 
-import SwapiService from '../../services/swapi-service';
 import Spinner from '../spinner';
 
 class ItemList extends Component {
-  swapiService = new SwapiService();
-
   state = {
-    peopleList: null,
+    itemList: null,
   }
 
   async componentDidMount() {
-    const peopleList = await this.swapiService.getAllPeople();
+    const { getData } = this.props;
 
-    this.setState({ peopleList });
+    const itemList = await getData();
+
+    this.setState({ itemList });
   }
 
   renderItems = (items) => {
@@ -33,13 +32,13 @@ class ItemList extends Component {
   }
 
   render = () => {
-    const { peopleList } = this.state;
+    const { itemList } = this.state;
 
-    if (!peopleList) {
+    if (!itemList) {
       return <Spinner />;
     }
 
-    const items = this.renderItems(peopleList);
+    const items = this.renderItems(itemList);
 
     return (
       <ul className="list-group item-list">
@@ -50,6 +49,7 @@ class ItemList extends Component {
 }
 
 ItemList.propTypes = {
+  getData: PropTypes.func.isRequired,
   onItemSelected: PropTypes.func.isRequired,
 };
 

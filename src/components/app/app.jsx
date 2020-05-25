@@ -6,8 +6,14 @@ import PlanetDetails from '../planet-details';
 import StarshipDetails from '../starship-details';
 import ErrorIndicator from '../error-indicator';
 import PeoplePage from '../people-page';
+import SwapiService from '../../services/swapi-service';
+
+import ItemList from '../item-list';
+import PersonDetails from '../person-details';
 
 class App extends Component {
+  swapiService = new SwapiService();
+
   state = {
     hasError: false,
   }
@@ -27,6 +33,31 @@ class App extends Component {
         <main className="container page-layout">
           <RandomPlanet />
           <PeoplePage />
+
+          <div className="row">
+            <div className="col-md">
+              <ItemList
+                onItemSelected={() => {}}
+                getData={this.swapiService.getAllPlanets}
+              />
+            </div>
+            <div className="col-md">
+              <PersonDetails personId={null} />
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-md">
+              <ItemList
+                onItemSelected={() => {}}
+                getData={this.swapiService.getAllStarships}
+              />
+            </div>
+            <div className="col-md">
+              <PersonDetails personId={null} />
+            </div>
+          </div>
+
         </main>
       </div>
     );
