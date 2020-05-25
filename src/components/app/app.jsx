@@ -6,10 +6,12 @@ import ItemList from '../item-list';
 import PersonDetails from '../person-details';
 import PlanetDetails from '../planet-details';
 import StarshipDetails from '../starship-details';
+import ErrorIndicator from '../error-indicator';
 
 class App extends Component {
   state = {
     selectedPerson: null,
+    hasError: false,
   }
 
   onPersonSelected = (id) => {
@@ -18,8 +20,14 @@ class App extends Component {
     });
   };
 
+  componentDidCatch = () => this.setState({ hasError: true });
+
   render = () => {
-    const { selectedPerson } = this.state;
+    const { selectedPerson, hasError } = this.state;
+
+    if (hasError) {
+      return <ErrorIndicator />;
+    }
 
     return (
       <div className="app">
