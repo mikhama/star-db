@@ -17,7 +17,7 @@ class ItemList extends Component {
   }
 
   renderItems = (items) => {
-    const { onItemSelected, renderItem } = this.props;
+    const { onItemSelected, children: renderItem } = this.props;
 
     return items.map(({ id, ...item }) => {
       const label = renderItem(item);
@@ -53,7 +53,7 @@ class ItemList extends Component {
 }
 
 ItemList.propTypes = {
-  renderItem: PropTypes.func.isRequired,
+  children: PropTypes.func.isRequired,
   getData: PropTypes.func.isRequired,
   onItemSelected: PropTypes.func.isRequired,
 };

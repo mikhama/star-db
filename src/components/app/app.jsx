@@ -34,7 +34,7 @@ class App extends Component {
           <RandomPlanet />
           <PeoplePage />
 
-          <div className="row">
+          {/* <div className="row">
             <div className="col-md">
               <ItemList
                 onItemSelected={() => {}}
@@ -63,7 +63,7 @@ class App extends Component {
             <div className="col-md">
               <PersonDetails personId={null} />
             </div>
-          </div>
+          </div> */}
 
         </main>
       </div>

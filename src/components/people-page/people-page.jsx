@@ -2,16 +2,15 @@ import React, { Component } from 'react';
 
 import ItemList from '../item-list';
 import PersonDetails from '../person-details';
-import ErrorIndicator from '../error-indicator';
 import SwapiService from '../../services/swapi-service';
 import Row from '../row';
+import ErrorBoundry from '../error-boundry/error-boundry';
 
 class PeoplePage extends Component {
   swapiService = new SwapiService();
 
   state = {
     selectedPerson: null,
-    hasError: false,
   };
 
   onPersonSelected = (id) => {
@@ -20,27 +19,24 @@ class PeoplePage extends Component {
     });
   };
 
-  componentDidCatch = () => this.setState({ hasError: true });
-
   render = () => {
-    const { selectedPerson, hasError } = this.state;
-
-    if (hasError) {
-      return <ErrorIndicator />;
-    }
+    const { selectedPerson } = this.state;
 
     const itemList = (
       <ItemList
         onItemSelected={this.onPersonSelected}
         getData={this.swapiService.getAllPeople}
-        renderItem={({ name, gender, birthYear }) => `${name} (${gender}, ${birthYear})`}
-      />
+      >
+        {({ name, gender, birthYear }) => `${name} (${gender}, ${birthYear})`}
+      </ItemList>
     );
 
     const personDetails = <PersonDetails personId={selectedPerson} />;
 
     return (
-      <Row left={itemList} right={personDetails} />
+      <ErrorBoundry>
+        <Row left={itemList} right={personDetails} />
+      </ErrorBoundry>
     );
   }
 }
