@@ -9,7 +9,8 @@ import PeoplePage from '../people-page';
 import SwapiService from '../../services/swapi-service';
 
 import ItemList from '../item-list';
-import PersonDetails from '../person-details';
+import ItemDetails from '../item-details';
+import Row from '../row';
 
 class App extends Component {
   swapiService = new SwapiService();
@@ -22,6 +23,12 @@ class App extends Component {
 
   render = () => {
     const { hasError } = this.state;
+    const {
+      getPerson,
+      getStarship,
+      getPersonImage,
+      getStarshipImage,
+    } = this.swapiService;
 
     if (hasError) {
       return <ErrorIndicator />;
@@ -32,7 +39,24 @@ class App extends Component {
         <Header />
         <main className="container page-layout">
           <RandomPlanet />
-          <PeoplePage />
+          {/* <PeoplePage /> */}
+
+          <Row
+            left={(
+              <ItemDetails
+                itemId={11}
+                getData={getPerson}
+                getImageUrl={getPersonImage}
+              />
+            )}
+            right={(
+              <ItemDetails
+                itemId={5}
+                getData={getStarship}
+                getImageUrl={getStarshipImage}
+              />
+            )}
+          />
 
           {/* <div className="row">
             <div className="col-md">

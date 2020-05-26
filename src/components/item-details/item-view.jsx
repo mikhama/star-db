@@ -1,20 +1,20 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 
-const PersonView = ({
-  person: {
-    id,
+const ItemView = ({
+  item: {
     name,
     gender,
     birthYear,
     eyeColor,
   },
+  image,
 }) => (
   <>
     <h4 className="card-header">{name}</h4>
     <div className="card-body">
-      <div className="person-details-img-container">
-        <img src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`} alt={name} width="100" />
+      <div className="item-details-img-container">
+        <img src={image} alt={name} width="100" />
       </div>
       <table className="table">
         <tbody>
@@ -36,14 +36,15 @@ const PersonView = ({
   </>
 );
 
-PersonView.propTypes = {
-  person: PropTypes.shape({
+ItemView.propTypes = {
+  item: PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     gender: PropTypes.string.isRequired,
     birthYear: PropTypes.string.isRequired,
     eyeColor: PropTypes.string.isRequired,
   }).isRequired,
+  image: PropTypes.string.isRequired,
 };
 
-export default PersonView;
+export default ItemView;

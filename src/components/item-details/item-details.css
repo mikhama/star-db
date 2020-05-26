@@ -1,0 +1,12 @@
+.item-details .card-body {
+  display: flex;
+}
+
+.item-details-img-container {
+  width: 240px;
+  margin-right: 18px;
+}
+
+.item-details-img-container img {
+  width: 100%;
+}
