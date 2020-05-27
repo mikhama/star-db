@@ -10,9 +10,13 @@ const Record = ({ item, field, label }) => (
 
 Record.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
-  item: PropTypes.object.isRequired,
+  item: PropTypes.any,
   field: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
+};
+
+Record.defaultProps = {
+  item: {},
 };
 
 export default Record;

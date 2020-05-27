@@ -23,14 +23,13 @@ const ItemView = ({
 
 ItemView.propTypes = {
   item: PropTypes.shape({
-    id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    gender: PropTypes.string.isRequired,
-    birthYear: PropTypes.string.isRequired,
-    eyeColor: PropTypes.string.isRequired,
   }).isRequired,
   image: PropTypes.string.isRequired,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element),
+  ]).isRequired,
 };
 
 export default ItemView;

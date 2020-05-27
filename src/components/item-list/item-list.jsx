@@ -26,7 +26,7 @@ const ItemList = ({ data, onItemSelected, children: renderLabel }) => {
 
 ItemList.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
-  data: PropTypes.object.isRequired,
+  data: PropTypes.array.isRequired,
   children: PropTypes.func.isRequired,
   onItemSelected: PropTypes.func.isRequired,
 };

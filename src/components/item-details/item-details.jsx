@@ -87,10 +87,17 @@ class ItemDetails extends Component {
 }
 
 ItemDetails.propTypes = {
-  itemId: PropTypes.string.isRequired,
+  itemId: PropTypes.string,
   getData: PropTypes.func.isRequired,
-  getImageUrl: PropTypes.string.isRequired,
-  children: PropTypes.element.isRequired,
+  getImageUrl: PropTypes.func.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element),
+  ]).isRequired,
+};
+
+ItemDetails.defaultProps = {
+  itemId: null,
 };
 
 export default ItemDetails;

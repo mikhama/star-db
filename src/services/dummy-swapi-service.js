@@ -4,21 +4,21 @@ import * as dummyStarshipImage from './dummy-starship.jpg';
 
 const people = [
   {
-    id: 1,
+    id: '1',
     name: 'Sheldon [TEST DATA]',
     gender: 'male',
     birthYear: '1986',
     eyeColor: 'blue',
   },
   {
-    id: 2,
+    id: '2',
     name: 'Cooper [TEST DATA]',
     gender: 'male',
     birthYear: '1987',
     eyeColor: 'green',
   },
   {
-    id: 2,
+    id: '3',
     name: 'Flash [TEST DATA]',
     gender: 'male',
     birthYear: '1970',
@@ -28,21 +28,21 @@ const people = [
 
 const planets = [
   {
-    id: 1,
+    id: '1',
     name: 'Earth [TEST DATA]',
     population: '6000000000',
     diameter: '20900',
     rotationPeriod: '24',
   },
   {
-    id: 2,
+    id: '2',
     name: 'Third planet [TEST DATA]',
     population: '6900000000',
     diameter: '21900',
     rotationPeriod: '1 day',
   },
   {
-    id: 3,
+    id: '3',
     name: 'Blue planet [TEST DATA]',
     population: '890000000',
     diameter: '30003',
@@ -52,7 +52,7 @@ const planets = [
 
 const starships = [
   {
-    id: 1,
+    id: '1',
     name: 'Appolo 1 [TEST DATA]',
     model: 'v1056',
     manufacturer: 'Appolo Inc.',
@@ -63,7 +63,7 @@ const starships = [
     cargoCapacity: '123 m3',
   },
   {
-    id: 2,
+    id: '2',
     name: 'Appolo 1334 [TEST DATA]',
     model: 'turbo3002',
     manufacturer: 'Appolo & Partners',
@@ -74,7 +74,7 @@ const starships = [
     cargoCapacity: '1230 m3',
   },
   {
-    id: 3,
+    id: '3',
     name: 'Appolo New [TEST DATA]',
     model: '2020',
     manufacturer: 'Appolo Inc.',
