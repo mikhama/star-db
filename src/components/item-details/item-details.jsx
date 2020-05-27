@@ -5,7 +5,6 @@ import Spinner from '../spinner';
 import ErrorIndicator from '../error-indicator';
 import InfoMessage from '../info-message';
 import ItemView from './item-view';
-import Record from '../record';
 
 class ItemDetails extends Component {
   state = {

@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 
 import Header from '../header';
 import RandomPlanet from '../random-planet';
-import PlanetDetails from '../planet-details';
-import StarshipDetails from '../starship-details';
 import ErrorIndicator from '../error-indicator';
-import PeoplePage from '../people-page';
 import SwapiService from '../../services/swapi-service';
 
-import ItemList from '../item-list';
-import ItemDetails from '../item-details';
-import Row from '../row';
-import Record from '../record';
+import {
+  PersonList,
+  PlanetList,
+  StarshipList,
+  PersonDetails,
+  PlanetDetails,
+  StarshipDetails,
+} from '../sw-components';
 
 class App extends Component {
   swapiService = new SwapiService();
@@ -40,62 +41,23 @@ class App extends Component {
         <Header />
         <main className="container page-layout">
           <RandomPlanet />
-          <PeoplePage />
+          {/* <PeoplePage /> */}
 
-          {/* <Row
-            left={(
-              <ItemDetails
-                itemId={11}
-                getData={getPerson}
-                getImageUrl={getPersonImage}
-              >
-                <Record field="gender" label="Gender" />
-                <Record field="eyeColor" label="Eye Color" />
-              </ItemDetails>
-            )}
-            right={(
-              <ItemDetails
-                itemId={5}
-                getData={getStarship}
-                getImageUrl={getStarshipImage}
-              >
-                <Record field="model" label="Model" />
-                <Record field="length" label="Length" />
-                <Record field="costInCredits" label="Cost" />
-              </ItemDetails>
-            )}
-          /> */}
+          <PersonDetails itemId={11} />
+          <PlanetDetails itemId={5} />
+          <StarshipDetails itemId={9} />
 
-          {/* <div className="row">
-            <div className="col-md">
-              <ItemList
-                onItemSelected={() => {}}
-                getData={this.swapiService.getAllPlanets}
-                renderItem={({ name, diameter }) => (
-                  <span>
-                    {`${name} (${diameter})`}
-                    <button type="button">!</button>
-                  </span>
-                )}
-              />
-            </div>
-            <div className="col-md">
-              <PersonDetails personId={null} />
-            </div>
-          </div>
+          <PersonList>
+            {({ name, gender, birthYear }) => `${name} (${gender}, ${birthYear})`}
+          </PersonList>
 
-          <div className="row">
-            <div className="col-md">
-              <ItemList
-                onItemSelected={() => {}}
-                getData={this.swapiService.getAllStarships}
-                renderItem={({ name, model }) => `${name} (${model})`}
-              />
-            </div>
-            <div className="col-md">
-              <PersonDetails personId={null} />
-            </div>
-          </div> */}
+          <StarshipList>
+            {({ name }) => `${name}`}
+          </StarshipList>
+
+          <PlanetList>
+            {({ name }) => `${name}`}
+          </PlanetList>
 
         </main>
       </div>
