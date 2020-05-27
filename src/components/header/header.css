@@ -26,3 +26,7 @@
 .header .nav-item.active .nav-link{
   color: #ea1f1f;
 }
+
+.header .change-service-button {
+  margin: 0 15px 0 auto;
+}

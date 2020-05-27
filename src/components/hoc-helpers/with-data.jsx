@@ -9,7 +9,20 @@ const withData = (View) => {
       data: null,
     }
 
-    async componentDidMount() {
+
+    componentDidMount() {
+      this.update();
+    }
+
+    componentDidUpdate(prevProps) {
+      const { getData } = this.props;
+
+      if (getData !== prevProps.getData) {
+        this.update();
+      }
+    }
+
+    async update() {
       const { getData } = this.props;
 
       const data = await getData();

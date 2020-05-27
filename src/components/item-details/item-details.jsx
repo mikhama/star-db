@@ -19,9 +19,11 @@ class ItemDetails extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { itemId } = this.props;
+    const { itemId, getData, getImageUrl } = this.props;
 
-    if (itemId !== prevProps.itemId) {
+    if (itemId !== prevProps.itemId
+      || getData !== prevProps.getData
+      || getImageUrl !== prevProps.getImageUrl) {
       this.updateItem();
     }
   }
