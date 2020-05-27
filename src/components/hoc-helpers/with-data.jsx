@@ -3,13 +3,15 @@ import { PropTypes } from 'prop-types';
 
 import Spinner from '../spinner';
 
-const withData = (View, getData) => {
+const withData = (View) => {
   class ComponentWithData extends Component {
     state = {
       data: null,
     }
 
     async componentDidMount() {
+      const { getData } = this.props;
+
       const data = await getData();
 
       this.setState({ data });

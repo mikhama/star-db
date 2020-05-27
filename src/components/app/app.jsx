@@ -50,9 +50,9 @@ class App extends Component {
             <PlanetDetails itemId={5} />
             <StarshipDetails itemId={9} />
 
-            {/* <PersonList />
+            <PersonList />
             <StarshipList />
-            <PlanetList /> */}
+            <PlanetList />
 
           </main>
         </div>
