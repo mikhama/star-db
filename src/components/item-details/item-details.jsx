@@ -5,6 +5,7 @@ import Spinner from '../spinner';
 import ErrorIndicator from '../error-indicator';
 import InfoMessage from '../info-message';
 import ItemView from './item-view';
+import Record from '../record';
 
 class ItemDetails extends Component {
   state = {
@@ -63,13 +64,15 @@ class ItemDetails extends Component {
       image,
     } = this.state;
 
+    const { children } = this.props;
+
     const isDataEmpty = !(isLoading || isError || item);
     const hasData = !(isLoading || isError || isDataEmpty);
 
     const errorMessage = isError ? <ErrorIndicator /> : null;
     const infoMessage = isDataEmpty ? <InfoMessage /> : null;
     const spinner = isLoading ? <Spinner /> : null;
-    const content = hasData ? <ItemView item={item} image={image} /> : null;
+    const content = hasData ? <ItemView item={item} image={image}>{children}</ItemView> : null;
 
     return (
       <div className="card text-white bg-primary border-danger item-details">
@@ -86,6 +89,7 @@ ItemDetails.propTypes = {
   itemId: PropTypes.string.isRequired,
   getData: PropTypes.func.isRequired,
   getImageUrl: PropTypes.string.isRequired,
+  children: PropTypes.element.isRequired,
 };
 
 export default ItemDetails;

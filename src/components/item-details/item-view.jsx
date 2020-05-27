@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children } from 'react';
 import { PropTypes } from 'prop-types';
 
 const ItemView = ({
@@ -9,6 +9,7 @@ const ItemView = ({
     eyeColor,
   },
   image,
+  children,
 }) => (
   <>
     <h4 className="card-header">{name}</h4>
@@ -18,18 +19,7 @@ const ItemView = ({
       </div>
       <table className="table">
         <tbody>
-          <tr>
-            <th scope="row">Gender</th>
-            <td>{gender}</td>
-          </tr>
-          <tr>
-            <th scope="row">Birth year</th>
-            <td>{birthYear}</td>
-          </tr>
-          <tr>
-            <th scope="row">Eye color</th>
-            <td>{eyeColor}</td>
-          </tr>
+          {Children.map(children, (child) => child)}
         </tbody>
       </table>
     </div>
@@ -45,6 +35,7 @@ ItemView.propTypes = {
     eyeColor: PropTypes.string.isRequired,
   }).isRequired,
   image: PropTypes.string.isRequired,
+  children: PropTypes.element.isRequired,
 };
 
 export default ItemView;

@@ -11,6 +11,7 @@ import SwapiService from '../../services/swapi-service';
 import ItemList from '../item-list';
 import ItemDetails from '../item-details';
 import Row from '../row';
+import Record from '../record';
 
 class App extends Component {
   swapiService = new SwapiService();
@@ -47,7 +48,10 @@ class App extends Component {
                 itemId={11}
                 getData={getPerson}
                 getImageUrl={getPersonImage}
-              />
+              >
+                <Record field="gender" label="Gender" />
+                <Record field="eyeColor" label="Eye Color" />
+              </ItemDetails>
             )}
             right={(
               <ItemDetails
