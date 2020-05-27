@@ -5,6 +5,8 @@ import RandomPlanet from '../random-planet';
 import ErrorIndicator from '../error-indicator';
 import SwapiService from '../../services/swapi-service';
 
+import { SwapiServiceProvider } from '../swapi-service-context';
+
 import {
   PersonList,
   PlanetList,
@@ -37,22 +39,24 @@ class App extends Component {
     }
 
     return (
-      <div className="app">
-        <Header />
-        <main className="container page-layout">
-          <RandomPlanet />
-          {/* <PeoplePage /> */}
+      <SwapiServiceProvider value={this.swapiService}>
+        <div className="app">
+          <Header />
+          <main className="container page-layout">
+            <RandomPlanet />
+            {/* <PeoplePage /> */}
 
-          <PersonDetails itemId={11} />
-          <PlanetDetails itemId={5} />
-          <StarshipDetails itemId={9} />
+            <PersonDetails itemId={11} />
+            <PlanetDetails itemId={5} />
+            <StarshipDetails itemId={9} />
 
-          <PersonList />
-          <StarshipList />
-          <PlanetList />
+            <PersonList />
+            <StarshipList />
+            <PlanetList />
 
-        </main>
-      </div>
+          </main>
+        </div>
+      </SwapiServiceProvider>
     );
   }
 }
