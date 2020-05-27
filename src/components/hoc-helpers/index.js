@@ -1,6 +1,7 @@
 import withData from './with-data';
+import withChildFunction from './with-child-function';
 
 export {
-  // eslint-disable-next-line import/prefer-default-export
   withData,
+  withChildFunction,
 };

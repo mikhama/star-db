@@ -47,17 +47,9 @@ class App extends Component {
           <PlanetDetails itemId={5} />
           <StarshipDetails itemId={9} />
 
-          <PersonList>
-            {({ name, gender, birthYear }) => `${name} (${gender}, ${birthYear})`}
-          </PersonList>
-
-          <StarshipList>
-            {({ name }) => `${name}`}
-          </StarshipList>
-
-          <PlanetList>
-            {({ name }) => `${name}`}
-          </PlanetList>
+          <PersonList />
+          <StarshipList />
+          <PlanetList />
 
         </main>
       </div>
