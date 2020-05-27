@@ -40,9 +40,9 @@ class App extends Component {
         <Header />
         <main className="container page-layout">
           <RandomPlanet />
-          {/* <PeoplePage /> */}
+          <PeoplePage />
 
-          <Row
+          {/* <Row
             left={(
               <ItemDetails
                 itemId={11}
@@ -64,7 +64,7 @@ class App extends Component {
                 <Record field="costInCredits" label="Cost" />
               </ItemDetails>
             )}
-          />
+          /> */}
 
           {/* <div className="row">
             <div className="col-md">
