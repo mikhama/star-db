@@ -4,7 +4,7 @@ import { PropTypes } from 'prop-types';
 const Record = ({ item, field, label }) => (
   <tr>
     <th scope="row">{label}</th>
-    <td>{field}</td>
+    <td>{item[field]}</td>
   </tr>
 );
 

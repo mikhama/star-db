@@ -2,24 +2,19 @@ import React, { Children } from 'react';
 import { PropTypes } from 'prop-types';
 
 const ItemView = ({
-  item: {
-    name,
-    gender,
-    birthYear,
-    eyeColor,
-  },
+  item,
   image,
   children,
 }) => (
   <>
-    <h4 className="card-header">{name}</h4>
+    <h4 className="card-header">{item.name}</h4>
     <div className="card-body">
       <div className="item-details-img-container">
-        <img src={image} alt={name} width="100" />
+        <img src={image} alt={item.name} width="100" />
       </div>
       <table className="table">
         <tbody>
-          {Children.map(children, (child) => child)}
+          {Children.map(children, (child) => React.cloneElement(child, { item }))}
         </tbody>
       </table>
     </div>
