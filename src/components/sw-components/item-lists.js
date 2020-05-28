@@ -1,5 +1,10 @@
 import ItemList from '../item-list';
-import { withData, withChildFunction, withSwapiService } from '../hoc-helpers';
+import {
+  withData,
+  withChildFunction,
+  withSwapiService,
+  compose,
+} from '../hoc-helpers';
 
 const renderName = ({ name }) => name;
 const renderModelAndName = ({ name, model }) => `${name} (${model})`;
@@ -16,29 +21,23 @@ const mapStarshipMethodsToProps = ({ getAllStarships }) => ({
   getData: getAllStarships,
 });
 
-const PersonList = withSwapiService(mapPersonMethodsToProps)(
-  withData(
-    withChildFunction(renderName)(
-      ItemList,
-    ),
-  ),
-);
+const PersonList = compose(
+  withSwapiService(mapPersonMethodsToProps),
+  withData,
+  withChildFunction(renderName),
+)(ItemList);
 
-const PlanetList = withSwapiService(mapPlanetMethodsToProps)(
-  withData(
-    withChildFunction(renderName)(
-      ItemList,
-    ),
-  ),
-);
+const PlanetList = compose(
+  withSwapiService(mapPlanetMethodsToProps),
+  withData,
+  withChildFunction(renderName),
+)(ItemList);
 
-const StarshipList = withSwapiService(mapStarshipMethodsToProps)(
-  withData(
-    withChildFunction(renderModelAndName)(
-      ItemList,
-    ),
-  ),
-);
+const StarshipList = compose(
+  withSwapiService(mapStarshipMethodsToProps),
+  withData,
+  withChildFunction(renderModelAndName),
+)(ItemList);
 
 export {
   PersonList,
