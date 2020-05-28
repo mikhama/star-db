@@ -28,7 +28,11 @@ ItemList.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.array.isRequired,
   children: PropTypes.func.isRequired,
-  onItemSelected: PropTypes.func.isRequired,
+  onItemSelected: PropTypes.func,
+};
+
+ItemList.defaultProps = {
+  onItemSelected: () => {},
 };
 
 export default ItemList;
