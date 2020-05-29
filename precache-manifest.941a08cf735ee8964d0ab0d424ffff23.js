@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "eb743d89b8dc69dbdff6ea9b1a38c886",
+    "revision": "ac7ec2ae02b7c75ca07430c7b9f9b0ab",
     "url": "/star-db/index.html"
   },
   {
