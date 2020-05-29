@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ea2f3322.chunk.css",
+    "main.js": "/static/js/main.2d652f45.chunk.js",
+    "main.js.map": "/static/js/main.2d652f45.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.c19340b9.js",
+    "runtime-main.js.map": "/static/js/runtime-main.c19340b9.js.map",
+    "static/css/2.9a9b1a2c.chunk.css": "/static/css/2.9a9b1a2c.chunk.css",
+    "static/js/2.173b3b77.chunk.js": "/static/js/2.173b3b77.chunk.js",
+    "static/js/2.173b3b77.chunk.js.map": "/static/js/2.173b3b77.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.94877bf52e5459b50d57030a60c0e790.js": "/precache-manifest.94877bf52e5459b50d57030a60c0e790.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.9a9b1a2c.chunk.css.map": "/static/css/2.9a9b1a2c.chunk.css.map",
+    "static/css/main.ea2f3322.chunk.css.map": "/static/css/main.ea2f3322.chunk.css.map",
+    "static/js/2.173b3b77.chunk.js.LICENSE.txt": "/static/js/2.173b3b77.chunk.js.LICENSE.txt",
+    "static/media/death-star.png": "/static/media/death-star.11b05336.png",
+    "static/media/dummy-person.jpeg": "/static/media/dummy-person.94ee142b.jpeg",
+    "static/media/dummy-starship.jpg": "/static/media/dummy-starship.1570cbfd.jpg",
+    "static/media/font-awesome.css": "/static/media/fontawesome-webfont.fee66e71.woff",
+    "static/media/r2-d2.png": "/static/media/r2-d2.6803cf9d.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c19340b9.js",
+    "static/css/2.9a9b1a2c.chunk.css",
+    "static/js/2.173b3b77.chunk.js",
+    "static/css/main.ea2f3322.chunk.css",
+    "static/js/main.2d652f45.chunk.js"
+  ]
+}
