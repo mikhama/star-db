@@ -42,7 +42,7 @@ class App extends Component {
     return (
       <ErrorBoundry>
         <SwapiServiceProvider value={swapiService}>
-          <BrowserRouter>
+          <BrowserRouter basename="/star-db">
             <div className="app">
               <Header onServiceChange={this.onServiceChange} />
               <main className="container page-layout">
