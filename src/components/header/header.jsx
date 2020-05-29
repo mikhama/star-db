@@ -1,6 +1,6 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Header = ({ onServiceChange }) => (
   <nav className="navbar navbar-expand navbar-dark bg-primary header">
@@ -12,26 +12,26 @@ const Header = ({ onServiceChange }) => (
       </Link>
 
       <ul className="navbar-nav">
-        <li className="nav-item active">
-          <Link className="nav-link" to="/people">
+        <li className="nav-item">
+          <NavLink className="nav-link" activeClassName="active" to="/people">
             <i className="fa fa-users" aria-hidden="true" />
             {' '}
             People
-          </Link>
+          </NavLink>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/planets">
+          <NavLink className="nav-link" activeClassName="active" to="/planets">
             <i className="fa fa-globe" aria-hidden="true" />
             {' '}
             Planets
-          </Link>
+          </NavLink>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/starships">
+          <NavLink className="nav-link" activeClassName="active" to="/starships">
             <i className="fa fa-ship" aria-hidden="true" />
             {' '}
             Starships
-          </Link>
+          </NavLink>
         </li>
       </ul>
 
