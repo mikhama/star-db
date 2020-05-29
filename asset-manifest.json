@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/star-db/static/css/main.ea2f3322.chunk.css",
-    "main.js": "/star-db/static/js/main.2d652f45.chunk.js",
-    "main.js.map": "/star-db/static/js/main.2d652f45.chunk.js.map",
+    "main.css": "/star-db/static/css/main.b3cdd3ad.chunk.css",
+    "main.js": "/star-db/static/js/main.d7010938.chunk.js",
+    "main.js.map": "/star-db/static/js/main.d7010938.chunk.js.map",
     "runtime-main.js": "/star-db/static/js/runtime-main.d9f21290.js",
     "runtime-main.js.map": "/star-db/static/js/runtime-main.d9f21290.js.map",
     "static/css/2.c5d474e4.chunk.css": "/star-db/static/css/2.c5d474e4.chunk.css",
-    "static/js/2.173b3b77.chunk.js": "/star-db/static/js/2.173b3b77.chunk.js",
-    "static/js/2.173b3b77.chunk.js.map": "/star-db/static/js/2.173b3b77.chunk.js.map",
+    "static/js/2.97da4bd5.chunk.js": "/star-db/static/js/2.97da4bd5.chunk.js",
+    "static/js/2.97da4bd5.chunk.js.map": "/star-db/static/js/2.97da4bd5.chunk.js.map",
     "index.html": "/star-db/index.html",
-    "precache-manifest.ff2733544eda98d67b370d9748e1a5de.js": "/star-db/precache-manifest.ff2733544eda98d67b370d9748e1a5de.js",
+    "precache-manifest.8e2d3e32f839084b4bf0a8d73d26200c.js": "/star-db/precache-manifest.8e2d3e32f839084b4bf0a8d73d26200c.js",
     "service-worker.js": "/star-db/service-worker.js",
     "static/css/2.c5d474e4.chunk.css.map": "/star-db/static/css/2.c5d474e4.chunk.css.map",
-    "static/css/main.ea2f3322.chunk.css.map": "/star-db/static/css/main.ea2f3322.chunk.css.map",
-    "static/js/2.173b3b77.chunk.js.LICENSE.txt": "/star-db/static/js/2.173b3b77.chunk.js.LICENSE.txt",
+    "static/css/main.b3cdd3ad.chunk.css.map": "/star-db/static/css/main.b3cdd3ad.chunk.css.map",
+    "static/js/2.97da4bd5.chunk.js.LICENSE.txt": "/star-db/static/js/2.97da4bd5.chunk.js.LICENSE.txt",
     "static/media/death-star.png": "/star-db/static/media/death-star.11b05336.png",
     "static/media/dummy-person.jpeg": "/star-db/static/media/dummy-person.94ee142b.jpeg",
     "static/media/dummy-starship.jpg": "/star-db/static/media/dummy-starship.1570cbfd.jpg",
@@ -23,8 +23,8 @@
   "entrypoints": [
     "static/js/runtime-main.d9f21290.js",
     "static/css/2.c5d474e4.chunk.css",
-    "static/js/2.173b3b77.chunk.js",
-    "static/css/main.ea2f3322.chunk.css",
-    "static/js/main.2d652f45.chunk.js"
+    "static/js/2.97da4bd5.chunk.js",
+    "static/css/main.b3cdd3ad.chunk.css",
+    "static/js/main.d7010938.chunk.js"
   ]
 }
