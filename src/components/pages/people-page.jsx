@@ -1,27 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { PropTypes } from 'prop-types';
+import { withRouter } from 'react-router-dom';
 
 import { PersonList, PersonDetails } from '../sw-components';
 import Row from '../row';
 
-class PeoplePage extends Component {
-  state = {
-    selectedItem: null,
-  }
+const PeoplePage = ({ match, history }) => (
+  <Row
+    left={<PersonList onItemSelected={(id) => history.push(id)} />}
+    right={<PersonDetails itemId={match.params.id} />}
+  />
+);
 
-  onItemSelected = (selectedItem) => this.setState({
-    selectedItem,
-  });
+PeoplePage.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  match: PropTypes.object.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  history: PropTypes.object.isRequired,
+};
 
-  render = () => {
-    const { selectedItem } = this.state;
-
-    return (
-      <Row
-        left={<PersonList onItemSelected={this.onItemSelected} />}
-        right={<PersonDetails itemId={selectedItem} />}
-      />
-    );
-  }
-}
-
-export default PeoplePage;
+export default withRouter(PeoplePage);

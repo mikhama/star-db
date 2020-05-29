@@ -36,7 +36,7 @@ class App extends Component {
                 <RandomPlanet />
 
                 <Route exact path="/" render={() => <h2>Welcome to Star Database</h2>} />
-                <Route path="/people" component={PeoplePage} />
+                <Route path="/people/:id?" component={PeoplePage} />
                 <Route path="/planets" component={PlanetsPage} />
                 <Route exact path="/starships" component={StarshipsPage} />
                 <Route
