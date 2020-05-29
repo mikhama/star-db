@@ -1,5 +1,8 @@
-.error-indicator {
+.card .error-indicator {
   margin-bottom: 0;
+}
+
+.error-indicator {
   text-align: center;
 }
 

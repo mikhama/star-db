@@ -23,7 +23,7 @@
   color: #8b8b8b;
 }
 
-.header .nav-item .nav-link.active {
+.header .navbar-nav .nav-item .nav-link.active {
   color: #ea1f1f;
 }
 

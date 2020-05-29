@@ -1,5 +1,8 @@
-.info-message {
+.card .info-message {
   margin-bottom: 0;
+}
+
+.info-message {
   text-align: center;
 }
 
