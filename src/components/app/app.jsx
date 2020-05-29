@@ -7,13 +7,22 @@ import RandomPlanet from '../random-planet';
 import SwapiService from '../../services/swapi-service';
 import DummySwapiService from '../../services/dummy-swapi-service';
 import { SwapiServiceProvider } from '../swapi-service-context';
-import { PeoplePage, PlanetsPage, StarshipsPage } from '../pages';
+import {
+  PeoplePage,
+  PlanetsPage,
+  StarshipsPage,
+  LoginPage,
+  SecretPage,
+} from '../pages';
 import { StarshipDetails } from '../sw-components';
 
 class App extends Component {
   state = {
     swapiService: new SwapiService(),
+    isLoggedIn: false,
   }
+
+  onLogin = () => this.setState({ isLoggedIn: true });
 
   onServiceChange = () => this.setState(({ swapiService, ...state }) => {
     const service = swapiService instanceof SwapiService
@@ -24,7 +33,7 @@ class App extends Component {
   })
 
   render = () => {
-    const { swapiService } = this.state;
+    const { swapiService, isLoggedIn } = this.state;
 
     return (
       <ErrorBoundry>
@@ -42,13 +51,19 @@ class App extends Component {
                 <Route
                   path="/starships/:id"
                   render={
-                    ({
-                      match: {
-                        params: {
-                          id,
-                        },
-                      },
-                    }) => <StarshipDetails itemId={id} />
+                    ({ match }) => <StarshipDetails itemId={match.params.id} />
+                  }
+                />
+                <Route
+                  path="/login"
+                  render={
+                    () => <LoginPage isLoggedIn={isLoggedIn} onLogin={this.onLogin} />
+                  }
+                />
+                <Route
+                  path="/secret"
+                  render={
+                    () => <SecretPage isLoggedIn={isLoggedIn} />
                   }
                 />
 

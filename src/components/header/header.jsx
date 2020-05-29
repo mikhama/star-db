@@ -33,6 +33,16 @@ const Header = ({ onServiceChange }) => (
             Starships
           </NavLink>
         </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" activeClassName="active" to="/secret">
+            Secret
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" activeClassName="active" to="/login">
+            Login
+          </NavLink>
+        </li>
       </ul>
 
       <button
