@@ -13,21 +13,21 @@ const Header = ({ onServiceChange }) => (
 
       <ul className="navbar-nav">
         <li className="nav-item">
-          <NavLink className="nav-link" activeClassName="active" to="/people">
+          <NavLink className="nav-link" activeClassName="active" to="/people/">
             <i className="fa fa-users" aria-hidden="true" />
             {' '}
             People
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" activeClassName="active" to="/planets">
+          <NavLink className="nav-link" activeClassName="active" to="/planets/">
             <i className="fa fa-globe" aria-hidden="true" />
             {' '}
             Planets
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" activeClassName="active" to="/starships">
+          <NavLink className="nav-link" activeClassName="active" to="/starships/">
             <i className="fa fa-ship" aria-hidden="true" />
             {' '}
             Starships
