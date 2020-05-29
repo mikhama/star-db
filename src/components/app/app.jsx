@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 import ErrorBoundry from '../error-boundry';
 import Header from '../header';
@@ -27,17 +28,19 @@ class App extends Component {
     return (
       <ErrorBoundry>
         <SwapiServiceProvider value={swapiService}>
-          <div className="app">
-            <Header onServiceChange={this.onServiceChange} />
-            <main className="container page-layout">
-              <RandomPlanet />
+          <BrowserRouter>
+            <div className="app">
+              <Header onServiceChange={this.onServiceChange} />
+              <main className="container page-layout">
+                <RandomPlanet />
 
-              <PeoplePage />
-              <PlanetsPage />
-              <StarshipsPage />
+                <Route path="/people" component={PeoplePage} />
+                <Route path="/planets" component={PlanetsPage} />
+                <Route path="/starships" component={StarshipsPage} />
 
-            </main>
-          </div>
+              </main>
+            </div>
+          </BrowserRouter>
         </SwapiServiceProvider>
       </ErrorBoundry>
     );
